@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AI教育ダッシュボード：政策・技術・実践の交差点</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-[#073B4C]">
+
+    <header class="bg-[#073B4C] text-white p-8 text-center shadow-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">生成AI教育ダッシュボード</h1>
+        <p class="text-lg text-[#118AB2]">政策・技術・実践の交差点から見る、教育の未来</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="pillars" class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-4">教育AIを動かす3つの力</h2>
+            <p class="max-w-4xl mx-auto text-lg mb-8">生成AIの教育活用は、単一の視点では語れません。国の「政策」、AIの「技術」開発、そして教育「実践」の現場。これら3つの柱が相互に作用し、未来の学びを形作っています。このダッシュボードで、それぞれの最前線を探りましょう。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#118AB2]">
+                    <h3 class="text-2xl font-bold text-[#118AB2]">政策の羅針盤</h3>
+                    <p>文部科学省が示すガイドラインと、学校現場への支援体制。国が描く教育DXの全体像を読み解きます。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#06D6A0]">
+                    <h3 class="text-2xl font-bold text-[#06D6A0]">技術の最前線</h3>
+                    <p>AIはなぜ賢いのか？その仕組みから、専門家が予測するAGI（汎用人工知能）の登場まで、技術の進化を探ります。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#FF6B6B]">
+                    <h3 class="text-2xl font-bold text-[#FF6B6B]">実践の実験室</h3>
+                    <p>パイロット校のリアルな挑戦。生徒や教員はAIとどう向き合い、どのような学びが生まれているのかを追います。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section id="policy" class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold text-[#118AB2] mb-6">政策の羅針盤：国が進めるAI活用</h2>
+                <p class="mb-6">文部科学省は、AIを「人間の能力を拡張する道具」と位置づけ、慎重かつ積極的な活用を推進。ガイドラインの策定とパイロット校の拡充を両輪で進めています。</p>
+                <div class="chart-container" style="height:350px; max-height:350px;">
+                    <canvas id="teacherTrainingChart"></canvas>
+                </div>
+                <p class="text-center text-sm mt-2 text-gray-600">自治体規模が大きいほど、生成AIに関する教員研修の実施率が高い傾向にあります。</p>
+            </section>
+
+            <section id="technology" class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold text-[#06D6A0] mb-6">技術の最前線：LLMからAGIへ</h2>
+                <p class="mb-6">生成AIの核となる大規模言語モデル（LLM）は、膨大なデータから「次に来る単語」を予測することで学習します。この技術の進化は、5年以内のAGI（汎用人工知能）登場を予感させます。</p>
+                <div class="flow-diagram flex flex-col items-center space-y-2 text-center">
+                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>事前学習 (Pre-Training)</strong><p class="text-xs">Web上の膨大なテキストで言語の基本構造を学ぶ</p></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>ファインチューニング (Fine-Tuning)</strong><p class="text-xs">対話データなどで特定のタスクや応答スタイルを学ぶ</p></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>人間のフィードバックによる強化学習 (RLHF)</strong><p class="text-xs">より安全で、人間に好まれる回答をするよう調整</p></div>
+                </div>
+                 <p class="text-center text-sm mt-4 text-gray-600">この学習プロセスを経て、AIは有用かつ安全な応答能力を獲得します。</p>
+            </section>
+        </div>
+
+        <section id="practice" class="mt-8 bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-3xl font-bold text-center text-[#FF6B6B] mb-2">実践の実験室：パイロット校の挑戦</h2>
+            <p class="text-center text-gray-600 mb-8">全国のパイロット校では、AIを教育にどう活かすか、日々試行錯誤が繰り返されています。ここでは3校のユニークな取り組みを紹介します。</p>
+            
+            <div class="border-b border-gray-200 mb-6">
+                <nav class="flex justify-center -mb-px space-x-4 md:space-x-8" aria-label="Tabs">
+                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg active" data-tab="midorino">みどりの学園</button>
+                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="nakano">中野中学校</button>
+                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="kadena">嘉手納中学校</button>
+                </nav>
+            </div>
+
+            <div id="midorino" class="tab-content active">
+                <h3 class="text-2xl font-bold text-center mb-4">つくば市立みどりの学園：「使う」ことで変わるAI観</h3>
+                <p class="text-center max-w-3xl mx-auto mb-6">AIを実際に使うことで、生徒のAIに対するイメージは「何でもできる魔法の箱」から「間違うこともある便利な道具」へと、より現実的なものに変化しました。この「AIの限界を知る」ことこそが、AIリテラシー教育の第一歩です。</p>
+                <div class="chart-container" style="height:400px; max-height:400px;">
+                    <canvas id="studentPerceptionChart"></canvas>
+                </div>
+            </div>
+
+            <div id="nakano" class="tab-content">
+                <h3 class="text-2xl font-bold text-center mb-4">相模原市立中野中学校：「プロンプトデザイン」は授業設計</h3>
+                <p class="text-center max-w-3xl mx-auto mb-6">AIへの指示（プロンプト）を工夫することは、学習目標を達成するための授業設計そのものです。役割、条件、評価基準などをプロンプトに組み込むことで、AIを質の高い学習パートナーへと変えることができます。</p>
+                 <div class="max-w-2xl mx-auto mt-4 bg-gray-50 p-4 rounded-lg border border-dashed border-[#FF6B6B]">
+                    <h4 class="font-bold text-lg text-center mb-2">良質なプロンプトの構成要素</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>役割設定 (Role):</strong> 「あなたは優秀な美術の先生です」</li>
+                        <li><strong>目標定義 (Goal):</strong> 「このデッサンがより良くなるようにアドバイスしてください」</li>
+                        <li><strong>評価基準 (Criteria):</strong> 「A評価の場合は、配色の提案もしてください」</li>
+                        <li><strong>実行シナリオ (Scenario):</strong> 「まず評価を述べ、次に質問を3回繰り返し、最後にまとめてください」</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="kadena" class="tab-content">
+                <h3 class="text-2xl font-bold text-center mb-4">嘉手納町立嘉手納中学校：「ふり返りくん」で第一歩</h3>
+                <p class="text-center max-w-3xl mx-auto mb-6">全教員がAI活用の一歩を踏み出せるよう、生徒の振り返り記述に即時フィードバックを返す「ふり返りくん」を開発。AIからの肯定的・具体的なアドバイスが生徒の記述意欲を高め、教員は無理なくAI活用を始められました。</p>
+                <div class="flow-diagram flex flex-col md:flex-row justify-center items-center md:space-x-4 space-y-4 md:space-y-0 mt-4 text-center">
+                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>1. 生徒が記述</strong><p class="text-xs">授業の振り返りをフォームに入力</p></div>
+                    <div class="flow-arrow self-center">→</div>
+                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>2. AIが分析</strong><p class="text-xs">教科の観点に基づき内容を評価</p></div>
+                    <div class="flow-arrow self-center">→</div>
+                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>3. 即時フィードバック</strong><p class="text-xs">肯定的コメントと改善点を提示</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="text-center mt-16">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-4">結論：AIは教育のパートナーである</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-6">生成AIは脅威ではなく、正しく向き合えば生徒の学びを深め、教員の働き方を改革する強力なパートナーです。大切なのは、完璧を待たずにまず一歩を踏み出し、試行錯誤の中から自校のスタイルを築いていくことです。</p>
+            <a href="https://gci.t.u-tokyo.ac.jp/" target="_blank" class="inline-block bg-[#FFD166] text-[#073B4C] font-bold py-3 px-8 rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
+                未来への一歩：東大松尾研の無料AI講座(GCI)で学ぶ
+            </a>
+        </section>
+    </main>
+
+    <footer class="text-center p-4 mt-8 text-sm text-gray-500">
+        <p>&copy; 2025 生成AI夏季公開学習会 インタラクティブダッシュボード</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+
+</body>
+</html>
