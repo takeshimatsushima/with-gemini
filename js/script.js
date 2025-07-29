@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Chart.js Label Wrapping and Tooltip Configuration
     const wrapLabel = (label) => {
         if (typeof label !== 'string') return label;
         const maxLength = 16;
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
+    // Teacher Training Chart
     const teacherTrainingCtx = document.getElementById('teacherTrainingChart').getContext('2d');
     new Chart(teacherTrainingCtx, {
         type: 'bar',
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Student Perception Chart
     const studentPerceptionCtx = document.getElementById('studentPerceptionChart').getContext('2d');
     new Chart(studentPerceptionCtx, {
         type: 'bar',
@@ -124,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Tab Logic
     const tabs = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -142,5 +146,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    });
+
+    // Modal Logic
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const title = trigger.getAttribute('data-modal-title');
+            const content = trigger.getAttribute('data-modal-content');
+            
+            modalTitle.textContent = title;
+            modalText.textContent = content;
+            modal.classList.remove('hidden');
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.add('hidden');
+    };
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
     });
 });
