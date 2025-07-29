@@ -13,107 +13,128 @@
 </head>
 <body class="text-[#073B4C]">
 
-    <header class="bg-[#073B4C] text-white p-8 text-center shadow-2xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-2">生成AI教育ダッシュボード</h1>
-        <p class="text-lg text-[#118AB2]">政策・技術・実践の交差点から見る、教育の未来</p>
+    <header class="bg-[#004AAD] text-white p-8 text-center shadow-lg sticky top-0 z-50">
+        <h1 class="text-3xl md:text-4xl font-bold mb-1">生成AI、教育の羅針盤</h1>
+        <p class="text-md text-[#80B9F2]">政策・技術・実践の交差点から見る、教育の未来</p>
     </header>
 
-    <main class="container mx-auto p-4 md:p-8">
+    <main class="container mx-auto p-4 md:p-8 mt-4">
 
-        <section id="pillars" class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-[#073B4C] mb-4">教育AIを動かす3つの力</h2>
-            <p class="max-w-4xl mx-auto text-lg mb-8">生成AIの教育活用は、単一の視点では語れません。国の「政策」、AIの「技術」開発、そして教育「実践」の現場。これら3つの柱が相互に作用し、未来の学びを形作っています。このダッシュボードで、それぞれの最前線を探りましょう。</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#118AB2]">
-                    <h3 class="text-2xl font-bold text-[#118AB2]">政策の羅針盤</h3>
-                    <p>文部科学省が示すガイドラインと、学校現場への支援体制。国が描く教育DXの全体像を読み解きます。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#06D6A0]">
-                    <h3 class="text-2xl font-bold text-[#06D6A0]">技術の最前線</h3>
-                    <p>AIはなぜ賢いのか？その仕組みから、専門家が予測するAGI（汎用人工知能）の登場まで、技術の進化を探ります。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-[#FF6B6B]">
-                    <h3 class="text-2xl font-bold text-[#FF6B6B]">実践の実験室</h3>
-                    <p>パイロット校のリアルな挑戦。生徒や教員はAIとどう向き合い、どのような学びが生まれているのかを追います。</p>
-                </div>
-            </div>
+        <section id="intro" class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-[#004AAD] mb-4">AIは、教育の脅威か、それとも好機か？</h2>
+            <p class="max-w-3xl mx-auto text-lg">生成AIが急速に普及する中、教育現場では期待と不安が交錯しています。しかし、文部科学省の調査では、校務でAIを活用した教員の<span class="font-bold text-[#006EE6] text-xl">97%</span>が業務改善の効果を実感。本ダッシュボードは、国の最新方針、技術の未来予測、そして先進校の実践例を基に、先生方がAIと協働するための道筋を示します。</p>
         </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <section id="policy" class="bg-white rounded-xl shadow-lg p-6">
-                <h2 class="text-3xl font-bold text-[#118AB2] mb-6">政策の羅針盤：国が進めるAI活用</h2>
-                <p class="mb-6">文部科学省は、AIを「人間の能力を拡張する道具」と位置づけ、慎重かつ積極的な活用を推進。ガイドラインの策定とパイロット校の拡充を両輪で進めています。</p>
-                <div class="chart-container" style="height:350px; max-height:350px;">
-                    <canvas id="teacherTrainingChart"></canvas>
+        <div class="space-y-16">
+
+            <section id="policy-future" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">第1部：国の方針とAIの未来</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#006EE6] mb-4">文部科学省の基本方針</h3>
+                        <p class="mb-6">国はAIを「人間の能力を拡張する道具」と定義。AIに使われるのではなく、AIを使いこなす力を育むことが重要です。最終的な判断と責任は常に人間が持ち、教育活動の質向上に繋がるかという視点が不可欠です。</p>
+                        <div class="chart-container" style="height:350px; max-height:350px;">
+                            <canvas id="teacherTrainingChart"></canvas>
+                        </div>
+                         <p class="text-center text-sm mt-2 text-gray-600">自治体規模が大きいほど、教員研修の実施率が高い傾向にあります。</p>
+                    </div>
+                    <div class="mt-8 lg:mt-0">
+                        <h3 class="text-2xl font-bold text-[#006EE6] mb-4">AIの未来予測</h3>
+                        <div class="bg-blue-50 border-l-4 border-[#006EE6] p-6 rounded-r-lg">
+                            <p class="text-6xl font-bold text-[#004AAD]">5<span class="text-3xl ml-2">年</span></p>
+                            <p class="text-gray-700 mt-2">以内に
+                                <span class="tooltip-container relative">
+                                    <span class="font-bold border-b-2 border-dotted border-[#006EE6] cursor-pointer">AGI（汎用人工知能）</span>
+                                    <span class="tooltip-text">人間と同等以上の知能を持ち、幅広い課題を解決できるAI。現在の特化型AIとは一線を画す。</span>
+                                </span>
+                                が登場するとの専門家予測
+                            </p>
+                        </div>
+                        <h4 class="font-bold text-lg mt-6 mb-2">教育への示唆</h4>
+                        <p>AGIの登場により、単純な知識の暗記の価値は相対的に低下します。代わりに、AIを使いこなし、AIにはできない創造性、対話的能力、そして物事を俯瞰的に捉える力が、未来を生きる生徒たちにとって不可欠なスキルとなります。AIを「使役する」ための教育が急務です。</p>
+                    </div>
                 </div>
-                <p class="text-center text-sm mt-2 text-gray-600">自治体規模が大きいほど、生成AIに関する教員研修の実施率が高い傾向にあります。</p>
             </section>
 
-            <section id="technology" class="bg-white rounded-xl shadow-lg p-6">
-                <h2 class="text-3xl font-bold text-[#06D6A0] mb-6">技術の最前線：LLMからAGIへ</h2>
-                <p class="mb-6">生成AIの核となる大規模言語モデル（LLM）は、膨大なデータから「次に来る単語」を予測することで学習します。この技術の進化は、5年以内のAGI（汎用人工知能）登場を予感させます。</p>
-                <div class="flow-diagram flex flex-col items-center space-y-2 text-center">
-                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>事前学習 (Pre-Training)</strong><p class="text-xs">Web上の膨大なテキストで言語の基本構造を学ぶ</p></div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>ファインチューニング (Fine-Tuning)</strong><p class="text-xs">対話データなどで特定のタスクや応答スタイルを学ぶ</p></div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="p-3 rounded-lg w-full max-w-sm"><strong>人間のフィードバックによる強化学習 (RLHF)</strong><p class="text-xs">より安全で、人間に好まれる回答をするよう調整</p></div>
+            <section id="transformation" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">第2部：教室と職員室の変革</h2>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="chart-container" style="height:400px; max-height:400px;">
+                        <canvas id="studentPerceptionChart"></canvas>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#006EE6] mb-4">生徒のAI観は「使う」ことで変わる</h3>
+                        <p>つくば市立みどりの学園の調査では、AIを実際に利用することで、生徒のAIに対するイメージが「何でもできる魔法の箱」から「間違うこともある便利な道具」へと、より現実的で健全なものに変化したことが示されています。</p>
+                        <h4 class="font-bold text-lg mt-6 mb-2">LLMの学習プロセス</h4>
+                        <p class="mb-4">AIが賢くなる仕組みを理解することも重要です。AIは主に3段階の学習を経て、人間のように自然な対話能力を獲得します。</p>
+                        <div class="flow-diagram flex flex-col items-center space-y-2 text-center">
+                            <div class="p-3 rounded-lg w-full max-w-sm"><strong>事前学習</strong><p class="text-xs">Web上の膨大なテキストで言語の基本構造を学ぶ</p></div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="p-3 rounded-lg w-full max-w-sm"><strong>ファインチューニング</strong><p class="text-xs">対話データで特定のタスクや応答スタイルを学ぶ</p></div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="p-3 rounded-lg w-full max-w-sm"><strong>強化学習 (RLHF)</strong><p class="text-xs">人間の評価を基により安全で自然な応答を学習</p></div>
+                        </div>
+                    </div>
                 </div>
-                 <p class="text-center text-sm mt-4 text-gray-600">この学習プロセスを経て、AIは有用かつ安全な応答能力を獲得します。</p>
+            </section>
+
+            <section id="practice" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">第3部：実践の実験室 - パイロット校の挑戦</h2>
+                <p class="text-center text-gray-600 mb-8">全国のパイロット校では、AIを教育にどう活かすか、日々試行錯誤が繰り返されています。ここでは3校のユニークな取り組みを紹介します。</p>
+                
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="flex justify-center -mb-px space-x-4 md:space-x-8" aria-label="Tabs">
+                        <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg active" data-tab="midorino">みどりの学園</button>
+                        <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="nakano">中野中学校</button>
+                        <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="kadena">嘉手納中学校</button>
+                    </nav>
+                </div>
+
+                <div id="midorino" class="tab-content active">
+                    <h3 class="text-2xl font-bold text-center mb-4">つくば市立みどりの学園：「AIは思考の伴走者」</h3>
+                    <p class="text-center max-w-3xl mx-auto mb-6">「2040年に活躍できるチェンジメーカーを育てる」という明確なビジョンの下、AIを「正解を教えてくれる機械」ではなく、「生徒の思考を深めるための壁打ち相手」として位置づけています。</p>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2 text-[#006EE6]">具体的な実践例：国語『詩の心発見の喜び』</h4>
+                        <p class="text-sm">生徒はまず自力で詩を解釈。その後、AIに作者の作風や傾向を尋ねることで、新たな視点を獲得します。AIの回答をヒントに、再度自分の解釈を深掘りするという往還的な学習活動を展開。AIはあくまで生徒の思考を補助する「伴走者」の役割に徹します。</p>
+                    </div>
+                </div>
+
+                <div id="nakano" class="tab-content">
+                    <h3 class="text-2xl font-bold text-center mb-4">相模原市立中野中学校：「プロンプトデザイン」は授業設計</h3>
+                    <p class="text-center max-w-3xl mx-auto mb-6">AIから質の高い応答を引き出すための
+                        <span class="tooltip-container relative">
+                            <span class="font-bold border-b-2 border-dotted border-[#006EE6] cursor-pointer">プロンプトデザイン</span>
+                            <span class="tooltip-text">AIへの指示や質問を工夫し、目的の回答を得るための技術。役割設定や条件指定などが含まれる。</span>
+                        </span>
+                        は、学習目標を達成するための授業設計そのものである、という先進的な考え方を推進しています。
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2 text-[#006EE6]">具体的な実践例：美術『自画像デッサン』</h4>
+                        <p class="text-sm">「あなたは優秀な美術教師です」といった役割設定や評価基準をプロンプトに組み込み、AIと対話。AIからの的確なフィードバックを通じて、自身の作品を客観的に見つめ直し、表現を深化させます。このプロセスは、教員の授業力向上にも繋がっています。</p>
+                    </div>
+                </div>
+
+                <div id="kadena" class="tab-content">
+                    <h3 class="text-2xl font-bold text-center mb-4">嘉手納町立嘉手納中学校：「チームで育む学びのカタチ」</h3>
+                    <p class="text-center max-w-3xl mx-auto mb-6">「100事例への挑戦」をスローガンに、学校全体で小さな実践を共有。特に、AI活用の第一歩を後押しする
+                        <span class="tooltip-container relative">
+                            <span class="font-bold border-b-2 border-dotted border-[#006EE6] cursor-pointer">「ふり返りくん」</span>
+                            <span class="tooltip-text">生徒の振り返り記述に対し、AIが即座に肯定的・具体的なフィードバックを返す独自ツール。</span>
+                        </span>
+                        の開発が特徴的です。
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2 text-[#006EE6]">失敗から学ぶ文化</h4>
+                        <p class="text-sm">当初、生徒がAIの提案を吟味せずコピー＆ペーストしてしまう課題が発生。しかし、これを学びの機会と捉え、「自分の表現とAIの提案を比較・検討する」活動へと即座に授業を改善。この迅速な改善サイクルが、学校全体のAI活用レベルを引き上げています。</p>
+                    </div>
+                </div>
             </section>
         </div>
 
-        <section id="practice" class="mt-8 bg-white rounded-xl shadow-lg p-6">
-            <h2 class="text-3xl font-bold text-center text-[#FF6B6B] mb-2">実践の実験室：パイロット校の挑戦</h2>
-            <p class="text-center text-gray-600 mb-8">全国のパイロット校では、AIを教育にどう活かすか、日々試行錯誤が繰り返されています。ここでは3校のユニークな取り組みを紹介します。</p>
-            
-            <div class="border-b border-gray-200 mb-6">
-                <nav class="flex justify-center -mb-px space-x-4 md:space-x-8" aria-label="Tabs">
-                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg active" data-tab="midorino">みどりの学園</button>
-                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="nakano">中野中学校</button>
-                    <button class="tab-button whitespace-nowrap py-4 px-1 font-bold text-lg" data-tab="kadena">嘉手納中学校</button>
-                </nav>
-            </div>
-
-            <div id="midorino" class="tab-content active">
-                <h3 class="text-2xl font-bold text-center mb-4">つくば市立みどりの学園：「使う」ことで変わるAI観</h3>
-                <p class="text-center max-w-3xl mx-auto mb-6">AIを実際に使うことで、生徒のAIに対するイメージは「何でもできる魔法の箱」から「間違うこともある便利な道具」へと、より現実的なものに変化しました。この「AIの限界を知る」ことこそが、AIリテラシー教育の第一歩です。</p>
-                <div class="chart-container" style="height:400px; max-height:400px;">
-                    <canvas id="studentPerceptionChart"></canvas>
-                </div>
-            </div>
-
-            <div id="nakano" class="tab-content">
-                <h3 class="text-2xl font-bold text-center mb-4">相模原市立中野中学校：「プロンプトデザイン」は授業設計</h3>
-                <p class="text-center max-w-3xl mx-auto mb-6">AIへの指示（プロンプト）を工夫することは、学習目標を達成するための授業設計そのものです。役割、条件、評価基準などをプロンプトに組み込むことで、AIを質の高い学習パートナーへと変えることができます。</p>
-                 <div class="max-w-2xl mx-auto mt-4 bg-gray-50 p-4 rounded-lg border border-dashed border-[#FF6B6B]">
-                    <h4 class="font-bold text-lg text-center mb-2">良質なプロンプトの構成要素</h4>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li><strong>役割設定 (Role):</strong> 「あなたは優秀な美術の先生です」</li>
-                        <li><strong>目標定義 (Goal):</strong> 「このデッサンがより良くなるようにアドバイスしてください」</li>
-                        <li><strong>評価基準 (Criteria):</strong> 「A評価の場合は、配色の提案もしてください」</li>
-                        <li><strong>実行シナリオ (Scenario):</strong> 「まず評価を述べ、次に質問を3回繰り返し、最後にまとめてください」</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="kadena" class="tab-content">
-                <h3 class="text-2xl font-bold text-center mb-4">嘉手納町立嘉手納中学校：「ふり返りくん」で第一歩</h3>
-                <p class="text-center max-w-3xl mx-auto mb-6">全教員がAI活用の一歩を踏み出せるよう、生徒の振り返り記述に即時フィードバックを返す「ふり返りくん」を開発。AIからの肯定的・具体的なアドバイスが生徒の記述意欲を高め、教員は無理なくAI活用を始められました。</p>
-                <div class="flow-diagram flex flex-col md:flex-row justify-center items-center md:space-x-4 space-y-4 md:space-y-0 mt-4 text-center">
-                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>1. 生徒が記述</strong><p class="text-xs">授業の振り返りをフォームに入力</p></div>
-                    <div class="flow-arrow self-center">→</div>
-                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>2. AIが分析</strong><p class="text-xs">教科の観点に基づき内容を評価</p></div>
-                    <div class="flow-arrow self-center">→</div>
-                    <div class="p-4 rounded-lg w-full md:w-1/4"><strong>3. 即時フィードバック</strong><p class="text-xs">肯定的コメントと改善点を提示</p></div>
-                </div>
-            </div>
-        </section>
-
         <section id="conclusion" class="text-center mt-16">
-            <h2 class="text-3xl font-bold text-[#073B4C] mb-4">結論：AIは教育のパートナーである</h2>
+            <h2 class="text-3xl font-bold text-[#004AAD] mb-4">結論：AIは教育のパートナーである</h2>
             <p class="max-w-3xl mx-auto text-lg mb-6">生成AIは脅威ではなく、正しく向き合えば生徒の学びを深め、教員の働き方を改革する強力なパートナーです。大切なのは、完璧を待たずにまず一歩を踏み出し、試行錯誤の中から自校のスタイルを築いていくことです。</p>
-            <a href="https://gci.t.u-tokyo.ac.jp/" target="_blank" class="inline-block bg-[#FFD166] text-[#073B4C] font-bold py-3 px-8 rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
+            <a href="https://gci.t.u-tokyo.ac.jp/" target="_blank" class="inline-block bg-[#FFC700] text-[#004AAD] font-bold py-3 px-8 rounded-lg shadow-md hover:bg-yellow-400 transition-colors">
                 未来への一歩：東大松尾研の無料AI講座(GCI)で学ぶ
             </a>
         </section>
