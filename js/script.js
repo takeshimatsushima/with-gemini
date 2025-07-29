@@ -43,9 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
             labels: ['都道府県', '政令指定都市', '中核市', 'その他'],
             datasets: [{
-                label: '研修を実施済み/予定',
+                label: '研修を実施済み/予定 (%)',
                 data: [65.7, 38.5, 36.8, 8.2],
-                backgroundColor: '#118AB2',
+                backgroundColor: '#80B9F2',
+                borderColor: '#006EE6',
+                borderWidth: 1
             }]
         },
         options: {
@@ -56,10 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 x: {
                     beginAtZero: true,
                     max: 100,
-                    ticks: {
-                        callback: function(value) {
-                            return value + '%'
-                        }
+                    title: {
+                        display: true,
+                        text: '実施率 (%)'
                     }
                 }
             },
@@ -93,12 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     label: '利用前',
                     data: [133, 105, 49, 26, 20, 37],
-                    backgroundColor: '#FFD166',
+                    backgroundColor: '#80B9F2',
                 },
                 {
                     label: '利用後',
                     data: [63, 72, 30, 11, 54, 77],
-                    backgroundColor: '#FF6B6B',
+                    backgroundColor: '#004AAD',
                 }
             ]
         },
